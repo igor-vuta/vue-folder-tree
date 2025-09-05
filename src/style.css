@@ -1,0 +1,35 @@
+:root{
+  --bg:            #f8fafc;   /* page background */
+  --surface:       #ffffff;   /* panels/cards */
+  --muted:         #f3f4f6;   /* hovers/stripes */
+  --border:        #e5e7eb;
+  --text:          #0f172a;
+  --text-muted:    #475569;
+  --accent:        #2563eb;   /* primary brand */
+  --accent-weak:   #e8f0fe;   /* selected bg */
+  --accent-ring:   rgba(37, 99, 235, .35);
+  --danger:        #ef4444;
+}
+
+/* optional dark mode */
+[data-theme="dark"]{
+  --bg:#0b1020; --surface:#12172a; --muted:#182034;
+  --border:#293045; --text:#e6edf3; --text-muted:#a3b2c7;
+  --accent:#5b9bff; --accent-weak:#12213f; --accent-ring:rgba(91,155,255,.5);
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* universal focus ring */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* nicer checkboxes, supported broadly */
+input[type="checkbox"]{
+  accent-color: var(--accent);
+}
