@@ -17,7 +17,7 @@ A production-ready, recursive **folder tree component** built with **Vue 3 + Vit
 
 ## 🔗 Live Demo
 
-🌐 [https://luxenonbeterris.github.io/vue-folder-tree](https://luxenonbeterris.github.io/vue-folder-tree)
+🌐 [https://igor-vuta.github.io/vue-folder-tree](https://igor-vuta.github.io/vue-folder-tree)
 
 ---
 
