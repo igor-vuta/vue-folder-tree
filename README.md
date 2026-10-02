@@ -1,49 +1,60 @@
-# 📂 Vue Folder Tree — Animated · Accessible · Accurate
+<!-- project-presentation:start -->
 
-A production-ready, recursive **folder tree component** built with **Vue 3 + Vite**.
+![Vue Folder Tree — Recursive folder-tree component and live demo](.github/readme-header.svg)
 
----
+**[Open project](https://igor-vuta.github.io/vue-folder-tree/)** · [Repository activity](https://github.com/igor-vuta/vue-folder-tree/activity)
 
-## ✨ Features
+[![Last commit](https://img.shields.io/github/last-commit/igor-vuta/vue-folder-tree?style=flat-square&color=6366f1)](https://github.com/igor-vuta/vue-folder-tree/commits)
+[![Repository size](https://img.shields.io/github/repo-size/igor-vuta/vue-folder-tree?style=flat-square&color=6366f1)](https://github.com/igor-vuta/vue-folder-tree)
 
-* ✅ Smooth expand/collapse animations
-* ✅ Keyboard navigation (`↑ ↓ Home End Space/Enter`)
-* ✅ ARIA roles for screen readers
-* ✅ Optional checkboxes
-* ✅ Simple API (props + events)
-* ✅ Zero dependencies
+**12** Demo nodes · **2** Tree components · **Vue 3** UI framework
 
----
+*Project facts checked 2 October 2026. Activity badges update from GitHub.*
 
-## 🔗 Live Demo
+<!-- project-presentation:end -->
 
-🌐 [https://igor-vuta.github.io/vue-folder-tree](https://igor-vuta.github.io/vue-folder-tree)
+# Vue Folder Tree
 
----
+A Vue 3 demo of a recursive folder tree. Select a file or folder to see its name, ID and path; expand folders with animated disclosure controls. [Open the live demo](https://igor-vuta.github.io/vue-folder-tree/).
 
-## 📦 Install & Run Locally
+## Features
 
-```bash
-# install deps
-pnpm install    # or: npm install / yarn
+- Recursive folders and files from a simple node array.
+- Animated expand and collapse controls.
+- Selection through `v-model` and a `select` event.
+- Configurable folder, open-folder and file icons.
+- ARIA tree roles and Up, Down, Home, End, Enter and Space key handlers.
 
-# start dev server
-pnpm dev        # or: npm run dev
+The component declares a `checkboxes` prop, but it does not render checkbox controls yet. Keyboard and screen-reader behavior has not had a complete accessibility audit.
+
+## Screenshots
+
+![Folder tree home view](docs/screenshots/home.png)
+
+*The demo shows the tree beside details for the selected node.*
+
+![Expanded folder tree](docs/screenshots/tree.png)
+
+*Nested folders can be expanded and selected.*
+
+## Run locally
+
+The project uses Vite and includes an npm lockfile. With Node 20 or later:
+
+```sh
+npm ci
+npm run dev
 ```
 
----
+| Script | Purpose |
+| --- | --- |
+| `npm run dev` | Start the local development server |
+| `npm run build` | Create a production build in `dist/` |
+| `npm run preview` | Serve the production build locally |
 
-## 🖼 Screenshots
+GitHub Actions builds and deploys the `main` branch to GitHub Pages.
 
-<p align="center">
-  <img src="docs/screenshots/home.png" alt="Home Screenshot" width="600" />
-  <br />
-  <img src="docs/screenshots/tree.png" alt="Tree Screenshot" width="600" />
-</p>
-
----
-
-## 🗂 Data Model
+## Data model
 
 ```ts
 type TreeNode = {
@@ -54,24 +65,18 @@ type TreeNode = {
 }
 ```
 
----
+The demo data lives in `src/mockFolders.ts`. The two recursive tree components are `src/components/FolderTree.vue` and `src/components/FolderTreeNode.vue`.
 
-## 🛠 Tech & Scripts
+## Component API
 
-**Stack:** Vue 3 · Vite · TypeScript SFCs
+`FolderTree` requires a `nodes` array and accepts an optional `v-model` selection. Pass `icons` to replace its folder, open-folder and file symbols. It emits `select` and `update:modelValue` with the selected ID.
 
-**Scripts:**
+```vue
+<FolderTree v-model="selectedId" :nodes="folders" @select="onSelect" />
+```
 
-* `dev` — run locally
-* `build` — production build
-* `preview` — preview built app
+The tree handles Up, Down, Home and End for selection and Enter or Space for expansion. Clicking a folder's disclosure button toggles its children; clicking a row selects it.
 
----
+## Stack and license
 
-## 📜 License
-
-**MIT License**
-
-* ✅ Free to use, modify, distribute
-* ✅ Great for portfolio/demo use
-* ❌ No warranty
+Vue 3, TypeScript Vue components and Vite. The source is available under the [MIT license](LICENSE).
