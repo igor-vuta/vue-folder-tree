@@ -13,6 +13,12 @@
 
 <!-- project-presentation:end -->
 
+<!-- project-pattern:start -->
+
+![A vertical tree branch connects three nested-looking file folders.](.github/project-pattern.svg)
+
+<!-- project-pattern:end -->
+
 # Vue Folder Tree
 
 A Vue 3 demo of a recursive folder tree. Select a file or folder to see its name, ID and path; expand folders with animated disclosure controls. [Open the live demo](https://igor-vuta.github.io/vue-folder-tree/).
